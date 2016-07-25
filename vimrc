@@ -29,12 +29,10 @@ function! NumberToggle()
     endif
 endfunc
 
-  
 " Map escape to jj 
 :imap jj <Esc>
 
-
-
+set laststatus=2
 " Leader key mappings
 let mapleader = "\<Space>"
 nnoremap <leader>n :call NumberToggle()<CR>
@@ -87,6 +85,10 @@ Plugin 'hwartig/vim-seeing-is-believing'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tmhedberg/matchit'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rakr/vim-one'
+Bundle 'edkolev/tmuxline.vim'
 
 call vundle#end()          
 filetype plugin indent on  
@@ -98,7 +100,20 @@ set number
 
 " Set Color Scheme and set Syntax to On
 colorscheme one
+set background=dark
+let g:airline_theme='one'
+let g:airline_powerline_fonts = 1
 syntax on
+hi Pmenu cterm=none ctermfg=Blue ctermbg=Black
+
+if (empty($TMUX))
+      if (has("nvim"))
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+      endif
+      if (has("termguicolors"))
+        set termguicolors
+      endif
+endif
 
 " NERDTree Settings
 let NERDTreeMinimalUI = 1
