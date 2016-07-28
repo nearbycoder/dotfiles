@@ -52,7 +52,6 @@ map ,b :CtrlPBuffer<CR>
 " Set autotag file for ctags
 let g:autotagTagsFile="./tags"
 
-
 " Plugins to Install
 Plugin 'burnettk/vim-angular'
 Plugin 'pangloss/vim-javascript'
@@ -88,8 +87,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rakr/vim-one'
-Bundle 'edkolev/tmuxline.vim'
-
+Plugin 'edkolev/tmuxline.vim'
 call vundle#end()          
 filetype plugin indent on  
 
@@ -105,38 +103,16 @@ let g:airline_theme='one'
 let g:airline_powerline_fonts = 1
 syntax on
 hi Pmenu cterm=none ctermfg=Blue ctermbg=Black
-
-if (empty($TMUX))
-      if (has("nvim"))
-        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-      endif
-      if (has("termguicolors"))
-        set termguicolors
-      endif
-endif
+highlight Normal ctermbg=234
 
 " NERDTree Settings
 let NERDTreeMinimalUI = 1
 
 map <C-n> :NERDTreeToggle<CR>
 
+" Save file with Control-s
 :nmap <C-s> :w<CR>
 :imap <C-s> <Esc>:w<CR>a
-
-" Enable seeing-is-believing mappings only for Ruby
-augroup seeingIsBelievingSettings
-    autocmd!
-
-    autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-    autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-
-    autocmd FileType ruby nmap <buffer> <leader>t <Plug>(seeing-is-believing-mark)
-    autocmd FileType ruby xmap <buffer> <leader>t <Plug>(seeing-is-believing-mark)
-    autocmd FileType ruby imap <buffer> <leader>t <Plug>(seeing-is-believing-mark)
-
-    autocmd FileType ruby nmap <buffer> <leader>r <Plug>(seeing-is-believing-run)
-    autocmd FileType ruby imap <buffer> <leader>r <Plug>(seeing-is-believing-run)
-augroup END
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg

@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/nearbycoder/.oh-my-zsh
-export TERM="xterm-256color" 
+export TERM="screen-256color" 
 alias python='python3'
 alias pip='pip3'
 alias be='bundle exec'
