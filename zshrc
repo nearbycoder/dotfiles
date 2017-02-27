@@ -65,7 +65,7 @@ plugins=(git ruby docker heroku tmuxinator)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/nearbycoder/.nvm/versions/node/v4.2.2/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/nearbycoder/.nvm/versions/node/v4.2.2/bin:$PATH:$HOME/.yarn/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
