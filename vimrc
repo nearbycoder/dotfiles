@@ -48,7 +48,7 @@ let g:syntastic_ruby_rubocop_exec      = '/Users/jhamilton/.rbenv/shims/rubocop'
 " Set ignored files for ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|bower_components\|git'
 map ,b :CtrlPBuffer<CR>
-
+map ,f :CtrlP<CR>
 " Set autotag file for ctags
 let g:autotagTagsFile="./tags"
 

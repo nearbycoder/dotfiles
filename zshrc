@@ -9,7 +9,8 @@ alias vim="stty stop '' -ixoff; vim"
 alias ctags="`brew --prefix`/bin/ctags"
 da() { docker exec -ti $1 bash}
 export EDITOR='vim'
-
+setopt PROMPT_SUBST
+PROMPT="->"
 KEYTIMEOUT=1
 
 alias remove_merged='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
@@ -65,7 +66,7 @@ plugins=(git ruby docker heroku tmuxinator)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/nearbycoder/.nvm/versions/node/v4.2.2/bin:$PATH:$HOME/.yarn/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/nearbycoder/.nvm/versions/node/v7.6.0/bin:$PATH:$HOME/.yarn/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
