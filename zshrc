@@ -4,9 +4,14 @@ export TERM="screen-256color"
 alias python='python3'
 alias pip='pip3'
 alias be='bundle exec'
+alias bepr='bundle exec rake db:prepare'
+alias bemi='bundle exec rake db:migrate'
+alias ta='tmux attach -t'
+alias tn='tmux new -s'
 alias kspring="ps ax | grep spring | cut -f1 -d' ' | xargs kill"
 alias vim="stty stop '' -ixoff; vim"
 alias ctags="`brew --prefix`/bin/ctags"
+alias status="node ~/Sites/CurrentProjects/SlackStatus/StatusCLI/index.js"
 da() { docker exec -ti $1 bash}
 export EDITOR='vim'
 setopt PROMPT_SUBST
@@ -97,8 +102,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(rbenv init -)"
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-
+subl () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 export NVM_DIR="/Users/nearbycoder/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export GOPATH=$HOME/Code/go
 PATH=$PATH:$GOPATH/bin
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
