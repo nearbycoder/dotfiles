@@ -4,9 +4,14 @@ export TERM="screen-256color"
 alias python='python3'
 alias pip='pip3'
 alias be='bundle exec'
+alias bepr='bundle exec rake db:prepare'
+alias bemi='bundle exec rake db:migrate'
+alias ta='tmux attach -t'
+alias tn='tmux new -s'
 alias kspring="ps ax | grep spring | cut -f1 -d' ' | xargs kill"
 alias vim="stty stop '' -ixoff; vim"
 alias ctags="`brew --prefix`/bin/ctags"
+alias status="node ~/Sites/CurrentProjects/SlackStatus/StatusCLI/index.js"
 da() { docker exec -ti $1 bash}
 export EDITOR='vim'
 setopt PROMPT_SUBST
@@ -105,7 +110,9 @@ PATH=$PATH:$GOPATH/bin
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
